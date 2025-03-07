@@ -13,19 +13,31 @@ query = st.text_input("검색어를 입력하세요:", "")
 
 def fetch_all_product_data(query):
     encoded_query = quote(query)
-    base_url = "https://www.hwahae.co.kr/_next/data/MgkRfo8mFXRFxum_el3Tb/search.json"
+    base_url = "https://www.hwahae.co.kr/_next/data/xGQnvXQAUn51sf35X2PT0/search.json"
 
     headers = {
-        "accept": "*/*",
-        "referer": f"https://www.hwahae.co.kr/search?q={encoded_query}",
-        "user-agent": "Mozilla/5.0",
-        "x-nextjs-data": "1",
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9',
+        'priority': 'u=1, i',
+        'referer': 'https://www.hwahae.co.kr/search',
+        'sec-ch-ua': '"Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"macOS"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'traceparent': '00-810c700f9fac4b55e54242feb74a6c84-1996e0549d4e335d-01',
+        'tracestate': 'es=s:1',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36',
+        'x-nextjs-data': '1',
     }
 
     cookies = {
-        "_tt_enable_cookie": "1",
-        "_ttp": "01JN5J6H0VYVFQY17YEXJCQF65_.tt.2",
-        "_ga": "GA1.1.1064689440.1740722358",
+        '_tt_enable_cookie': '1',
+        '_ttp': '01JN5J6H0VYVFQY17YEXJCQF65_.tt.2',
+        '_ga': 'GA1.1.1064689440.1740722358',
+        'aws-waf-token': 'bec70e14-21e7-4a70-a32d-c74934c6ee57:AQoAe8YnvWmvAAAA:TwD6QurtZy6DmfCkYVXig7RFN6nff8cNxQT2Z7BpJ3sFg5vP98GvkED52mfqayBFXBBM7z3ORHhbARFbbPsM+FRUEv0EsAnZBDNjYv302huhVYlsOsr5Zo7CJkN7Ci0zsSyooSU0JxOCcCXD6+7XHONCdanj9xserXEztD4i5L/e/CtyY+SCGgWVDzI0pf76qf9a',
+        '_ga_36NCBJ5CBH': 'GS1.1.1741159840.4.1.1741159854.46.0.1906019588',
     }
 
     all_products = []
